@@ -4,7 +4,7 @@
 </script>
 
 <nav class="p-6 grid place-items-center w-full bg-dark-text shadow-sm dark:bg-dark-el">
-	<div class="flex items-center justify-between w-full max-w-6xl">
+	<div class="flex items-center justify-between w-full max-w-5xl">
 		<strong aria-label="site-logo" class="font-semibold"> Where in the world? </strong>
 
 		<button
