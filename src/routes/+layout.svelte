@@ -14,7 +14,7 @@
 
 <div class="bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text min-h-screen">
 	<Navbar />
-	<main class="p-6">
+	<main class="p-8">
 		<slot />
 	</main>
 </div>

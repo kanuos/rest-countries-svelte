@@ -2,7 +2,7 @@ import type { PageServerLoad } from "./$types"
 
 
 // A loose schema describing the incoming country element
-type CountryResponseType = {
+export type CountryResponseType = {
     name: { common: string },
     flags: { svg: string },
     capital: string[]
@@ -23,7 +23,7 @@ export const load: PageServerLoad = async () => {
     })
 
     return {
-        countryList,
+        countryList : countryList.sort((a,b) => a.name.common.localeCompare(b.name.common)),
         regions: [...regions]
     }
 }

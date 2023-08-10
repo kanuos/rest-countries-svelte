@@ -3,7 +3,9 @@
 	import { themeStore } from '$lib/stores/ThemeToggler';
 </script>
 
-<nav class="p-6 grid place-items-center w-full bg-dark-text shadow-sm dark:bg-dark-el">
+<nav
+	class="px-8 py-6 grid place-items-center w-full bg-dark-text shadow-lg dark:bg-dark-el sticky top-0 z-20"
+>
 	<div class="flex items-center justify-between w-full max-w-5xl">
 		<strong aria-label="site-logo" class="font-semibold"> Where in the world? </strong>
 
