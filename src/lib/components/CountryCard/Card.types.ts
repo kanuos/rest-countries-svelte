@@ -3,5 +3,6 @@ export type CountryCardProps = {
     country: string;
     population: number;
     region: string;
-    capital: string
+    capital: string;
+    cca3: string
 }

@@ -8,11 +8,12 @@ export type CountryResponseType = {
     capital: string[]
     region: string
     population: number
+    cca3: string
 }
 
 export const load: PageServerLoad = async () => {
     // requesting REST Countries API as a Proxy API
-    const response = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,population,flags,region");
+    const response = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,population,flags,region,cca3");
     const countryList = await response.json() as CountryResponseType[];
 
     // stores all the unique regions for the filtering purposes

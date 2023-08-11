@@ -2,13 +2,13 @@ import type { CountryResponseType } from "../routes/proxy+page.server";
 import type { CountryCardProps } from "./components/CountryCard/Card.types";
 
 /**
- * this function converts a country name into a slug string
- * eg. United States of America ==> united+states+of+america
+ * this function converts a country name into a CCA3 string
+ * eg. United States of America ==> USA
  * @param countryName string
  * @returns string
  */
-export function getDetailURL(countryName: string): string {
-    return `/detail/${countryName.toLowerCase().split(' ').join('+')}`
+export function getDetailURL(code: string): string {
+    return `/detail/${code}`
 }
 
 /**
@@ -52,11 +52,12 @@ export function getFilteredList(list: CountryResponseType[], region: string, key
         : list.filter((el) =>
             el.name.common.toLowerCase().includes(keyword.toLowerCase())
         )
-    ).filter((el) => (region.trim().length > 0 ? el.region === region : el)).map(({ region, population, capital, name, flags }) => ({
+    ).filter((el) => (region.trim().length > 0 ? el.region === region : el)).map(({ region, population, capital, name, flags, cca3 }) => ({
         capital: capital.join(","),
         country: name.common,
         flagURL: flags.svg,
         population,
-        region
+        region,
+        cca3
     }));
 }

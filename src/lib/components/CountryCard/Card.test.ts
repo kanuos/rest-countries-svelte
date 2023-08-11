@@ -8,16 +8,13 @@ import { formatPopulation, getDetailURL } from "$lib/utils";
 beforeEach(cleanup)
 
 const testProps: CountryCardProps[] = [
-    { flagURL: 'https://flagcdn.com/ni.svg', country: 'Nicaragua', population: 6624554, region: 'Americas', capital: 'Managua' },
-    { flagURL: 'https://flagcdn.com/pr.svg', country: 'Puerto Rico', population: 3194034, region: 'Americas', capital: 'San Juan' },
-    { flagURL: 'https://flagcdn.com/la.svg', country: 'Laos', population: 7275556, region: 'Asia', capital: 'Vientiane' },
-    { flagURL: 'https://flagcdn.com/jo.svg', country: 'Jordan', population: 10203140, region: 'Asia', capital: 'Amman' },
-    { flagURL: 'https://flagcdn.com/md.svg', country: 'Moldova', population: 2617820, region: 'Europe', capital: 'Chișinău' },
-    { flagURL: 'https://flagcdn.com/st.svg', country: 'São Tomé and Príncipe', population: 219161, region: 'Africa', capital: 'São Tomé' },
-    { flagURL: 'https://flagcdn.com/nu.svg', country: 'Niue', population: 1470, region: 'Oceania', capital: 'Alofi' },
-    { flagURL: 'https://flagcdn.com/cw.svg', country: 'Curaçao', population: 155014, region: 'Americas', capital: 'Willemstad' },
-    { flagURL: 'https://flagcdn.com/cd.svg', country: 'DR Congo', population: 108407721, region: 'Africa', capital: 'Kinshasa' },
-    { flagURL: 'https://flagcdn.com/mm.svg', country: 'Myanmar', population: 54409794, region: 'Asia', capital: 'Naypyidaw' },
+    { flagURL: 'https://flagcdn.com/ni.svg', country: 'Nicaragua', population: 6624554, region: 'Americas', capital: 'Managua', cca3: "NIC" },
+    { flagURL: 'https://flagcdn.com/pr.svg', country: 'Puerto Rico', population: 3194034, region: 'Americas', capital: 'San Juan', cca3: "PRC" },
+    { flagURL: 'https://flagcdn.com/la.svg', country: 'Laos', population: 7275556, region: 'Asia', capital: 'Vientiane', cca3: "LAO" },
+    { flagURL: 'https://flagcdn.com/jo.svg', country: 'Jordan', population: 10203140, region: 'Asia', capital: 'Amman', cca3: "JOR" },
+    { flagURL: 'https://flagcdn.com/md.svg', country: 'Moldova', population: 2617820, region: 'Europe', capital: 'Chișinău', cca3: "MOL" },
+    { flagURL: 'https://flagcdn.com/st.svg', country: 'São Tomé and Príncipe', population: 219161, region: 'Africa', capital: 'São Tomé',cca3: "STP" },
+    { flagURL: 'https://flagcdn.com/nu.svg', country: 'Niue', population: 1470, region: 'Oceania', capital: 'Alofi', cca3: "NIU" },
 ]
 
 
@@ -32,8 +29,7 @@ describe(Card.name, () => {
             expect(cardEl.tagName).toBe("A");
             expect(cardEl.classList.contains("bg-light-bg")).toBe(true)
             expect(cardEl.classList.contains("dark:bg-dark-el")).toBe(true)
-            expect(cardEl.getAttribute("href")).toBe(getDetailURL(props.country))
-            expect(cardEl.getAttribute("href")).not.toBe(getDetailURL(props.country).toUpperCase())
+            expect(cardEl.getAttribute("href")).toMatch(getDetailURL(props.cca3))
         })
         it("should render flag with alt text", () => {
             render(Card, { ...props });

@@ -26,14 +26,16 @@
 		}
 	});
 
-	export let { flagURL, country, population, region, capital } = <CountryCardProps>$$props;
+	export let { flagURL, country, population, region, capital, cca3 } = <CountryCardProps>$$props;
+
+	$: href = getDetailURL(cca3);
 </script>
 
 <a
 	in:receive={{ key: country }}
 	out:send={{ key: country }}
 	aria-label="country-card"
-	href={getDetailURL(country)}
+	{href}
 	class="h-full w-full max-w-xs mx-auto overflow-hidden rounded-lg drop-shadow-lg bg-light-bg dark:bg-dark-el
 grid grid-rows-2 hover:scale-105 hover:drop-shadow-2xl transition-all group auto-rows-auto gap-4"
 >
