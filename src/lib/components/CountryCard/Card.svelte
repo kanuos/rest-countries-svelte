@@ -36,8 +36,8 @@
 	out:send={{ key: country }}
 	aria-label="country-card"
 	{href}
-	class="h-full w-full max-w-xs mx-auto overflow-hidden rounded-lg drop-shadow-lg bg-light-bg dark:bg-dark-el
-grid grid-rows-2 hover:scale-105 hover:drop-shadow-2xl transition-all group auto-rows-auto gap-4"
+	class="h-full w-full max-w-xs mx-auto overflow-hidden rounded-lg drop-shadow-2xl bg-dark-text dark:bg-dark-el
+grid grid-rows-2 hover:scale-105 hover:shadow-2xl transition-all group auto-rows-auto gap-4 outline-none focus:outline-none"
 >
 	<figure class="h-full max-h-44 w-full grid place-items-center overflow-hidden">
 		<img
