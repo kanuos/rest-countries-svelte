@@ -1,30 +1,31 @@
-import type { PageServerLoad } from "./$types"
-
+import type { PageServerLoad } from './$types';
 
 // A loose schema describing the incoming country element
 export type CountryResponseType = {
-    name: { common: string },
-    flags: { svg: string },
-    capital: string[]
-    region: string
-    population: number
-    cca3: string
-}
+	name: { common: string };
+	flags: { svg: string };
+	capital: string[];
+	region: string;
+	population: number;
+	cca3: string;
+};
 
 export const load: PageServerLoad = async () => {
-    // requesting REST Countries API as a Proxy API
-    const response = await fetch("https://restcountries.com/v3.1/all?fields=name,capital,population,flags,region,cca3");
-    const countryList = await response.json() as CountryResponseType[];
+	// requesting REST Countries API as a Proxy API
+	const response = await fetch(
+		'https://restcountries.com/v3.1/all?fields=name,capital,population,flags,region,cca3'
+	);
+	const countryList = (await response.json()) as CountryResponseType[];
 
-    // stores all the unique regions for the filtering purposes
-    const regions = new Set<string>();
+	// stores all the unique regions for the filtering purposes
+	const regions = new Set<string>();
 
-    countryList.forEach((el: { region: string }) => {
-        regions.add(el.region)
-    })
+	countryList.forEach((el: { region: string }) => {
+		regions.add(el.region);
+	});
 
-    return {
-        countryList : countryList.sort((a,b) => a.name.common.localeCompare(b.name.common)),
-        regions: [...regions]
-    }
-}
+	return {
+		countryList: countryList.sort((a, b) => a.name.common.localeCompare(b.name.common)),
+		regions: [...regions]
+	};
+};

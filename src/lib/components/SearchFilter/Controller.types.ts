@@ -1,6 +1,5 @@
 export type ControllerProps = {
-    searchKeyword: string;
-    regions: string[];
-    selectedRegion: string;
-
-}
+	searchKeyword: string;
+	regions: string[];
+	selectedRegion: string;
+};
