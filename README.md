@@ -18,7 +18,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/kanuos/rest-countries-svelte)
-- Live Site URL: [Netlify]([https://your-live-site-url.com](https://capable-starship-b5a52b.netlify.app/detail/LAO))
+- Live Site URL: [Netlify](https://capable-starship-b5a52b.netlify.app/detail/LAO)
 
 ## My process
 
