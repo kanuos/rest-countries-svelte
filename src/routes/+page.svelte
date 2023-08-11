@@ -30,7 +30,7 @@
 </div>
 <div
 	aria-label="country-list"
-	class="grid grid-cols-1 gap-y-12 my-10 gap-x-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-4/5 sm:w-full max-w-5xl 2xl:max-w-7xl mx-auto"
+	class="grid grid-cols-1 gap-y-12 my-10 gap-x-8 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 w-full max-w-5xl 2xl:max-w-7xl mx-auto"
 >
 	{#if filteredCountryList.length > 0}
 		{#each filteredCountryList as props}
