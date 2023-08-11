@@ -7,7 +7,9 @@
 	class="px-8 py-6 grid place-items-center w-full bg-dark-text shadow-lg dark:bg-dark-el sticky top-0 z-20"
 >
 	<div class="flex items-center justify-between w-full max-w-5xl">
-		<strong aria-label="site-logo" class="font-semibold"> Where in the world? </strong>
+		<a href="/" class="outline-none focus:underline">
+			<strong aria-label="site-logo" class="font-semibold"> Where in the world? </strong>
+		</a>
 
 		<button
 			aria-label="theme-toggler"
